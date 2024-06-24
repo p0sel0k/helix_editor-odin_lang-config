@@ -1,0 +1,28 @@
+version: 3
+
+tasks:
+  default:
+    cmds:
+      - task: build
+
+  build:
+    cmds:
+      - odin build src/main -out=bin/main.exe
+    aliases:
+      - b
+    # silent: true
+    sources:
+      - ./src/**/*.odin
+    generates:
+      - bin/main.exe
+      
+  run:
+    cmds:
+      - odin run src/main -out=bin/main.exe
+    aliases:
+      - r
+    # silent: true
+    sources:
+      - ./src/**/*.odin
+    generates:
+      - bin/main.exe

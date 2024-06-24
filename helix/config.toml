@@ -1,0 +1,33 @@
+theme = "nightfox"
+
+[editor]
+bufferline = "multiple"
+auto-format = false
+color-modes = true
+cursorline = true
+lsp.display-inlay-hints = true
+lsp.display-messages = true
+preview-completion-insert = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 80 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+[editor.statusline]
+center = [ "file-name", "spinner"]
+left = ["mode"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type", "total-line-numbers"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'"' = '"'
+"'" = "'"

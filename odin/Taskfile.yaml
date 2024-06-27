@@ -3,38 +3,53 @@ version: 3
 tasks:
   default:
     cmds:
+      - task: help
+
+  help:
+    cmds:
+      - echo "Odin Task help:"
+      - echo ""
+      - echo "buid_run (br) - build and run odin project (src/main package by defoult)"
+      - echo "buid     (b)  - build odin project as executable (src/main package by defoult)" 
+      - echo "check    (c)  - check odin project (all packages inside ./src/"
+      - echo "run      (r)  - run odin project (bin/main.exe by defoult)"
+    silent: true
+    aliases:
+      - h
+
+  build_run:
+    cmds:
       - task: build
+      - task: run
+    aliases:
+      - br
+    silent: true
+    # sources:
+    #   - ./src/**/*.odin
+    # generates:
+    #   - bin/main.exe
 
   build:
     cmds:
+      - task: check
       - odin build src/game -out=bin/main.exe
     aliases:
       - b
-    # silent: true
-    sources:
-      - ./src/**/*.odin
-    generates:
-      - bin/main.exe
+    silent: true
+    # sources:
+    #   - ./src/**/*.odin
+    # generates:
+    #   - bin/main.exe
       
-  build_run:
-    cmds:
-      - odin run src/game -out=bin/main.exe
-    aliases:
-      - br
-    # silent: true
-    sources:
-      - ./src/**/*.odin
-    generates:
-      - bin/main.exe
-
-  run:
-    cmds:
-      - ./bin/main.exe
-    aliases:
-      - r
-
   check:
     cmds:
       - powershell -Command "& odin_check"
     aliases:
       - c  
+    silent: true
+    
+  run:
+    cmds:
+      - ./bin/main.exe
+    aliases:
+      - r

@@ -2,7 +2,7 @@ theme = "nightfox"
 
 [editor]
 bufferline = "multiple"
-auto-format = false
+auto-format = true
 color-modes = true
 cursorline = true
 lsp.display-inlay-hints = true

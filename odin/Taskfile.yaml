@@ -7,7 +7,7 @@ tasks:
 
   build:
     cmds:
-      - odin build src/main -out=bin/main.exe
+      - odin build src/game -out=bin/main.exe
     aliases:
       - b
     # silent: true
@@ -16,13 +16,25 @@ tasks:
     generates:
       - bin/main.exe
       
-  run:
+  build_run:
     cmds:
-      - odin run src/main -out=bin/main.exe
+      - odin run src/game -out=bin/main.exe
     aliases:
-      - r
+      - br
     # silent: true
     sources:
       - ./src/**/*.odin
     generates:
       - bin/main.exe
+
+  run:
+    cmds:
+      - ./bin/main.exe
+    aliases:
+      - r
+
+  check:
+    cmds:
+      - powershell -Command "& odin_check"
+    aliases:
+      - c  

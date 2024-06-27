@@ -1,8 +1,7 @@
 {
 		"$schema": "https://raw.githubusercontent.com/DanielGavin/ols/master/misc/ols.schema.json",
-		//i'm noy sure if i really need this parameter
 		"collections" : [
-			{ "name": "test_pr", "path": "c:/Users/Anton/Development/OdinProjects/test_pr/src/main" }
+			{ "name": "first_raylib_game", "path": "c:/Users/Anton/Development/OdinProjects/RayLibGames/snake_game/src" }
 		],
 		"enable_semantic_tokens": true,
 		"enable_document_symbols": true,
@@ -10,7 +9,7 @@
 		"enable_hover": true,
 		"enable_snippets": true,
 	  "enable_inlay_hints": true,
-	  "checker_args": ["src/**"],
+	  "checker_args": ["-vet", "strict-style"],
 		"profile": "default",
 		
 		"profiles": [
